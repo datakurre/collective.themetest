@@ -20,3 +20,8 @@ Screenshots
    screenshots-document.rst
    screenshots-folder.rst
    screenshots-controlpanel.rst
+
+   desktop/screenshots/README.rst
+   tablet-landscape/screenshots/README.rst
+   tablet-portrait/screenshots/README.rst
+   mobile/screenshots/README.rst
