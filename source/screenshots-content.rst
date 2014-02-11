@@ -1,0 +1,172 @@
+Document edit and view
+----------------------
+
+
+.. code:: robotframework
+
+   Setup Document Edit And View Screenshots
+       Enable autologin as  Site Administrator
+       Set autologin username  ${USER_ID}
+
+
+.. figure:: _screenshots/document-edit.png
+.. code:: robotframework
+
+   Capture Document Edit Screenshot
+       ${uid} =  Create content  type=Document
+       ...  id=new-document
+       ...  title=${DUMMY_TEXT_LINE}
+       ...  description=${DUMMY_TEXT_SHORT}  text=${DUMMY_TEXT}
+       Fire transition  ${uid}  publish
+
+       Go to  ${PLONE_URL}/new-document/edit
+       Capture page screenshot  _screenshots/document-edit.png
+
+
+.. figure:: _screenshots/document-view.png
+.. code:: robotframework
+
+   Capture Document View Screenshot
+       Go to  ${PLONE_URL}/new-document
+       Capture page screenshot  _screenshots/document-view.png
+
+
+.. figure:: _screenshots/document-anonymous-view.png
+.. code:: robotframework
+
+   Capture Document Anonymous View Screenshot
+       Disable autologin
+       Go to  ${PLONE_URL}/new-document
+       Capture page screenshot  _screenshots/document-anonymous-view.png
+
+
+.. code:: robotframework
+
+   Teardown Document Edit And View Screenshots
+       Enable autologin as  Site Administrator
+       Delete content  /${PLONE_SITE_ID}/new-document
+       Disable autologin
+
+
+Folder edit and view
+--------------------
+
+
+.. code:: robotframework
+
+   Setup Folder Screenshots
+       Enable autologin as  Site Administrator
+       Set autologin username  ${USER_ID}
+
+       ${uid-folder} =  Create content  type=Folder
+       ...  id=new-folder
+       ...  title=${DUMMY_TEXT_LINE}
+       ...  description=${DUMMY_TEXT_SHORT}
+       Fire transition  ${uid-folder}  publish
+       Go to  ${PLONE_URL}/new-folder
+       Capture page screenshot  _screenshots/folder-edit.png
+
+       ${uid} =  Create content  type=Document
+       ...  container=${uid-folder}
+       ...  id=document-1
+       ...  title=${DUMMY_TEXT_LINE}
+       ...  description=${DUMMY_TEXT_SHORT}  text=${DUMMY_TEXT}
+       Fire transition  ${uid}  publish
+
+       ${uid} =  Create content  type=Document
+       ...  container=${uid-folder}
+       ...  id=document-2
+       ...  title=${DUMMY_TEXT_LINE}
+       ...  description=${DUMMY_TEXT_SHORT}  text=${DUMMY_TEXT}
+       Fire transition  ${uid}  publish
+
+       ${uid} =  Create content  type=Document
+       ...  container=${uid-folder}
+       ...  id=document-3
+       ...  title=${DUMMY_TEXT_LINE}
+       ...  description=${DUMMY_TEXT_SHORT}  text=${DUMMY_TEXT}
+       Fire transition  ${uid}  publish
+
+
+.. figure:: _screenshots/folder-edit.png
+.. figure:: _screenshots/folder-contents-view.png
+.. figure:: _screenshots/folder-summary-view.png
+.. figure:: _screenshots/folder-full-view.png
+.. figure:: _screenshots/folder-tabular-view.png
+.. figure:: _screenshots/folder-album-view.png
+.. figure:: _screenshots/folder-listing-view.png
+.. code:: robotframework
+
+   Capture Folder Screenshots
+
+       Go To  ${PLONE_URL}/new-folder/folder_contents
+       Capture page screenshot  _screenshots/folder-contents-view.png
+
+       Go To  ${PLONE_URL}/new-folder/folder_summary_view
+       Capture page screenshot  _screenshots/folder-summary-view.png
+
+       Go To  ${PLONE_URL}/new-folder/folder_full_view
+       Capture page screenshot  _screenshots/folder-full-view.png
+
+       Go To  ${PLONE_URL}/new-folder/folder_tabular_view
+       Capture page screenshot  _screenshots/folder-tabular-view.png
+
+       Go To  ${PLONE_URL}/new-folder/atct_album_view
+       Capture page screenshot  _screenshots/folder-album-view.png
+
+       Go To  ${PLONE_URL}/new-folder/folder_listing
+       Capture page screenshot  _screenshots/folder-listing-view.png
+
+
+.. figure:: _screenshots/folder-anonymous-summary-view.png
+.. figure:: _screenshots/folder-anonymous-full-view.png
+.. figure:: _screenshots/folder-anonymous-tabular-view.png
+.. figure:: _screenshots/folder-anonymous-album-view.png
+.. figure:: _screenshots/folder-anonymous-listing-view.png
+.. code:: robotframework
+
+   Capture Anonymous Folder Screenshots
+       Disable autologin
+
+       Go To  ${PLONE_URL}/new-folder/folder_summary_view
+       Capture page screenshot  _screenshots/folder-anonymous-summary-view.png
+
+       Go To  ${PLONE_URL}/new-folder/folder_full_view
+       Capture page screenshot  _screenshots/folder-anonymous-full-view.png
+
+       Go To  ${PLONE_URL}/new-folder/folder_tabular_view
+       Capture page screenshot  _screenshots/folder-anonymous-tabular-view.png
+
+       Go To  ${PLONE_URL}/new-folder/atct_album_view
+       Capture page screenshot  _screenshots/folder-anonymous-album-view.png
+
+       Go To  ${PLONE_URL}/new-folder/folder_listing
+       Capture page screenshot  _screenshots/folder-anonymous-listing-view.png
+
+
+Search and sitemap
+------------------
+
+
+.. figure:: _screenshots/search.png
+.. code:: robotframework
+
+   Capture Search Screenshots
+       Go To  ${PLONE_URL}/@@search?SearchableText=Plone
+       Capture page screenshot  _screenshots/search.png
+
+
+.. figure:: _screenshots/sitemap.png
+.. code:: robotframework
+
+   Capture Sitemap Screenshots
+       Go To  ${PLONE_URL}/sitemap
+       Capture page screenshot  _screenshots/sitemap.png
+
+
+.. code:: robotframework
+
+   Teardown Content Screenshots
+       Enable autologin as  Site Administrator
+       Delete content  ${PLONE_SITE_ID}/new-folder
+       Disable autologin
