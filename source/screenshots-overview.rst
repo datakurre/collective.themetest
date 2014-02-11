@@ -1,6 +1,9 @@
 Overview
 --------
 
+Front page
+..........
+
 .. figure:: _screenshots/front-page.png
 .. code:: robotframework
 
@@ -8,6 +11,8 @@ Overview
        Go to  ${PLONE_URL}
        Capture page screenshot  _screenshots/front-page.png
 
+Accessibility information
+.........................
 
 .. figure:: _screenshots/accessibility.png
 .. code:: robotframework
@@ -16,6 +21,8 @@ Overview
        Go To  ${PLONE_URL}/accessibility-info
        Capture page screenshot  _screenshots/accessibility.png
 
+Contact information form
+........................
 
 .. figure:: _screenshots/contact-info.png
 .. code:: robotframework

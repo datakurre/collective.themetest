@@ -1,5 +1,5 @@
-Desktop
-=======
+Desktop (1200x)
+===============
 
 .. code:: robotframework
 
@@ -16,4 +16,7 @@ Desktop
 
    *** Test Cases ***
 
-.. include:: ../screenshots-all.rst
+.. include:: ../screenshots-overview.rst
+.. include:: ../screenshots-login.rst
+.. include:: ../screenshots-content.rst
+.. include:: ../screenshots-controlpanel.rst

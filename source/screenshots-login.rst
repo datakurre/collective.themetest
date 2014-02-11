@@ -1,6 +1,8 @@
 Login and logout
 ----------------
 
+Login form
+..........
 
 .. figure:: _screenshots/login.png
 .. code:: robotframework
@@ -10,6 +12,8 @@ Login and logout
        Go to  ${PLONE_URL}/login
        Capture page screenshot  _screenshots/login.png
 
+Login failed
+............
 
 .. figure:: _screenshots/login-failed.png
 .. code:: robotframework
@@ -22,6 +26,8 @@ Login and logout
        Page should contain button  Log in
        Capture page screenshot  _screenshots/login-failed.png
 
+Login successful
+................
 
 .. figure:: _screenshots/login-successful.png
 .. code:: robotframework
@@ -34,6 +40,8 @@ Login and logout
        Page should not contain button  Log in
        Capture page screenshot  _screenshots/login-successful.png
 
+Logout successful
+.................
 
 .. figure:: _screenshots/logout-successful.png
 .. code:: robotframework

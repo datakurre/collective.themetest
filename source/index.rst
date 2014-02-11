@@ -1,18 +1,19 @@
-===========
-Screenshots
-===========
+===================
+Plone Theme Preview
+===================
 
 .. toctree::
    :maxdepth: 2
    :numbered:
 
    desktop/index
-   tablet-landscape/index
-   tablet-portrait/index
-   mobile/index
 
 .. toctree::
    :hidden:
+
+   tablet-landscape/index
+   tablet-portrait/index
+   mobile/index
 
    screenshots-all.rst
    screenshots-login.rst

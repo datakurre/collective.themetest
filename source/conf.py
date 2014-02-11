@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import os
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
@@ -24,8 +26,8 @@ source_encoding = 'utf-8'
 master_doc = 'index'
 
 # General information about the project.
-project = u'collective.themetest'
-copyright = u'github.com/collective'
+project = os.environ.get('SPHINX_PROJECT', u'Plone Theme Preview')
+copyright = os.environ.get('SPHINX_COPYRIGHT', u'Plone Foundation')
 
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinxcontrib_robotframework']
@@ -52,12 +54,12 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# html_theme = 'pyramid'
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+templates_path = ['_templates']
 
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'sphinxcontrib-robotframework'
-
-# -- Options for LaTeX output --------------------------------------------------
+# -- Options for LaTeX output -------------------------------------------------
 
 latex_elements = {
     'papersize': 'a4paper',
@@ -66,7 +68,6 @@ latex_elements = {
 latex_documents = [
     # (source target file, target latex name, document title,
     #  author, document clas [howto/manual]),
-    ('index', 'sphinxcontrib-robotframework.tex',
-     u'collective.themetest',
-     u'github.com/collective', 'manual'),
+    ('index', 'plone-theme.tex', u'Plone Theme Preview',
+     u'Jane Doe', 'manual'),
 ]

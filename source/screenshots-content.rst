@@ -1,13 +1,14 @@
 Document edit and view
 ----------------------
 
-
 .. code:: robotframework
 
    Setup Document Edit And View Screenshots
        Enable autologin as  Site Administrator
        Set autologin username  ${USER_ID}
 
+Edit document
+.............
 
 .. figure:: _screenshots/document-edit.png
 .. code:: robotframework
@@ -22,6 +23,8 @@ Document edit and view
        Go to  ${PLONE_URL}/new-document/edit
        Capture page screenshot  _screenshots/document-edit.png
 
+View document
+.............
 
 .. figure:: _screenshots/document-view.png
 .. code:: robotframework
@@ -30,6 +33,8 @@ Document edit and view
        Go to  ${PLONE_URL}/new-document
        Capture page screenshot  _screenshots/document-view.png
 
+View document (anonymous)
+.........................
 
 .. figure:: _screenshots/document-anonymous-view.png
 .. code:: robotframework
@@ -39,7 +44,6 @@ Document edit and view
        Go to  ${PLONE_URL}/new-document
        Capture page screenshot  _screenshots/document-anonymous-view.png
 
-
 .. code:: robotframework
 
    Teardown Document Edit And View Screenshots
@@ -47,10 +51,8 @@ Document edit and view
        Delete content  /${PLONE_SITE_ID}/new-document
        Disable autologin
 
-
 Folder edit and view
 --------------------
-
 
 .. code:: robotframework
 
@@ -87,32 +89,79 @@ Folder edit and view
        ...  description=${DUMMY_TEXT_SHORT}  text=${DUMMY_TEXT}
        Fire transition  ${uid}  publish
 
+Edit folder
+...........
 
 .. figure:: _screenshots/folder-edit.png
-.. figure:: _screenshots/folder-contents-view.png
-.. figure:: _screenshots/folder-summary-view.png
-.. figure:: _screenshots/folder-full-view.png
-.. figure:: _screenshots/folder-tabular-view.png
-.. figure:: _screenshots/folder-album-view.png
-.. figure:: _screenshots/folder-listing-view.png
 .. code:: robotframework
 
-   Capture Folder Screenshots
+   Capture Edit Folder Screenshot
+
+       Go To  ${PLONE_URL}/new-folder/edit
+       Capture page screenshot  _screenshots/folder-contents-view.png
+
+Folder contents
+...............
+
+.. figure:: _screenshots/folder-contents-view.png
+.. code:: robotframework
+
+   Capture Edit Folder Screenshot
 
        Go To  ${PLONE_URL}/new-folder/folder_contents
        Capture page screenshot  _screenshots/folder-contents-view.png
 
+Folder summary view
+...................
+
+.. figure:: _screenshots/folder-summary-view.png
+.. code:: robotframework
+
+   Capture Folder Summary Screenshot
+
        Go To  ${PLONE_URL}/new-folder/folder_summary_view
        Capture page screenshot  _screenshots/folder-summary-view.png
+
+Folder full view
+................
+
+.. figure:: _screenshots/folder-full-view.png
+.. code:: robotframework
+
+   Capture Folder Full View Screenshot
 
        Go To  ${PLONE_URL}/new-folder/folder_full_view
        Capture page screenshot  _screenshots/folder-full-view.png
 
+Folder tabular view
+...................
+
+.. figure:: _screenshots/folder-tabular-view.png
+.. code:: robotframework
+
+   Capture Folder Tabular View Screenshot
+
        Go To  ${PLONE_URL}/new-folder/folder_tabular_view
        Capture page screenshot  _screenshots/folder-tabular-view.png
 
+Folder album view
+.................
+
+.. figure:: _screenshots/folder-album-view.png
+.. code:: robotframework
+
+   Capture Folder Album View Screenshot
+
        Go To  ${PLONE_URL}/new-folder/atct_album_view
        Capture page screenshot  _screenshots/folder-album-view.png
+
+Folder listing view
+...................
+
+.. figure:: _screenshots/folder-listing-view.png
+.. code:: robotframework
+
+   Capture Folder Listing Screenshot
 
        Go To  ${PLONE_URL}/new-folder/folder_listing
        Capture page screenshot  _screenshots/folder-listing-view.png
@@ -147,6 +196,8 @@ Folder edit and view
 Search and sitemap
 ------------------
 
+Search result
+.............
 
 .. figure:: _screenshots/search.png
 .. code:: robotframework
@@ -155,6 +206,8 @@ Search and sitemap
        Go To  ${PLONE_URL}/@@search?SearchableText=Plone
        Capture page screenshot  _screenshots/search.png
 
+Sitemap
+.......
 
 .. figure:: _screenshots/sitemap.png
 .. code:: robotframework

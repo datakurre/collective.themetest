@@ -1,5 +1,5 @@
-Tablet (portrait)
-=================
+Tablet, portrait (768x)
+=======================
 
 .. code:: robotframework
 
@@ -16,4 +16,7 @@ Tablet (portrait)
 
    *** Test Cases ***
 
-.. include:: ../screenshots-all.rst
+.. include:: ../screenshots-overview.rst
+.. include:: ../screenshots-login.rst
+.. include:: ../screenshots-content.rst
+.. include:: ../screenshots-controlpanel.rst
