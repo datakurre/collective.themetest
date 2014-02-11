@@ -17,8 +17,7 @@ Screenshots
    screenshots-all.rst
    screenshots-login.rst
    screenshots-overview.rst
-   screenshots-document.rst
-   screenshots-folder.rst
+   screenshots-content.rst
    screenshots-controlpanel.rst
 
    desktop/_screenshots/README.rst
