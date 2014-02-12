@@ -98,7 +98,7 @@ Edit folder
    Capture Edit Folder Screenshot
 
        Go To  ${PLONE_URL}/new-folder/edit
-       Capture page screenshot  _screenshots/folder-contents-view.png
+       Capture page screenshot  _screenshots/folder-edit.png
 
 Folder contents
 ...............
