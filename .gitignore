@@ -21,3 +21,6 @@ syntax: glob
 /source/mobile/_screenshots/*.png
 /source/tablet-landscape/_screenshots/*.png
 /source/tablet-portrait/_screenshots/*.png
+/log.html
+/report.html
+/output.xml
