@@ -18,12 +18,17 @@ ${FIXTURE}  plone.app.robotframework.PLONE_ROBOT_TESTING
 *** Keywords ***
 
 Suite Setup
-   Setup Plone site  ${FIXTURE}
+   Run keyword if  sys.argv[0] != 'bin/robot'  Pybot Suite Setup
+   Run keyword if  sys.argv[0] == 'bin/robot'  Robot Suite Setup
+
    Set window size  @{DIMENSIONS}
 
 Test Setup
    Import library  Remote  ${PLONE_URL}/RobotRemote
-   Set default language
+
+   Run keyword if  sys.argv[0] != 'bin/robot'  Pybot Test Setup
+   Run keyword if  sys.argv[0] == 'bin/robot'  Robot Test Setup
+
    Enable autologin as  Manager
    ${user_id} =  Translate  user_id
    ...  default=jane-doe
@@ -34,15 +39,46 @@ Test Setup
    Disable autologin
 
 Test Teardown
-   Set Zope layer  ${FIXTURE}
-   ZODB TearDown
-   ZODB SetUp
+   Run keyword if  sys.argv[0] != 'bin/robot'  Pybot Test Teardown
+   Run keyword if  sys.argv[0] == 'bin/robot'  Robot Test Teardown
 
 Suite Teardown
+   Run keyword if  sys.argv[0] != 'bin/robot'  Pybot Suite Teardown
+   Run keyword if  sys.argv[0] == 'bin/robot'  Robot Suite Teardown
+
+
+Pybot Suite Setup
+   Setup Plone site  ${FIXTURE}
+
+Pybot Test Setup
+   Log  'Pybot Test Setup is included in Pybot Suite Setup'
+
+Pybot Test Teardown
+   Log  'Pybot Test Setup is not necessary because of Pybot Suite Teardown'
+
+# Pybot Test Teardown
+#    Set Zope layer  ${FIXTURE}
+#    ZODB TearDown
+#    ZODB SetUp
+
+Pybot Suite Teardown
    Teardown Plone Site
 
-Input RichText
-  [Arguments]  ${input}
-  Select frame  id=text_ifr
-  Input text  id=content  ${input}
-  Unselect Frame
+
+Robot Suite Setup
+   Open test browser
+
+Robot Test Setup
+   Remote ZODB SetUp  ${FIXTURE}
+
+Robot Test Teardown
+   Remote ZODB TearDown  ${FIXTURE}
+
+Robot Suite Teardown
+   Close all browsers
+
+# Input RichText
+#    [Arguments]  ${input}
+#    Select frame  id=text_ifr
+#    Input text  id=content  ${input}
+#    Unselect Frame

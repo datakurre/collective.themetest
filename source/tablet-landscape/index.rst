@@ -8,7 +8,7 @@ Tablet, landscape (992x)
    Resource  ../common.robot
 
    Suite Setup  Run keywords  Suite Setup  Test Setup
-   Suite Teardown  Suite Teardown
+   Suite Teardown  Run keywords  Suite Teardown  Test Teardown
 
    *** Variables ***
 
