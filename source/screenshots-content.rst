@@ -183,6 +183,7 @@ Folder full view (anonymous)
 
 .. figure:: _screenshots/folder-anonymous-full-view.png
 .. code:: robotframework
+
    Capture Anonymous Folder Full View Screenshot
 
        Go To  ${PLONE_URL}/new-folder/folder_full_view
@@ -204,6 +205,7 @@ Folder album view (anonymous)
 
 .. figure:: _screenshots/folder-anonymous-album-view.png
 .. code:: robotframework
+
    Capture Anonymous Folder Album View Screenshot
 
        Go To  ${PLONE_URL}/new-folder/atct_album_view
