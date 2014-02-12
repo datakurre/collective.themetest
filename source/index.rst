@@ -7,13 +7,12 @@ Plone Theme Preview
    :numbered:
 
    desktop/index
-
-.. toctree::
-   :hidden:
-
    tablet-landscape/index
    tablet-portrait/index
    mobile/index
+
+.. toctree::
+   :hidden:
 
    screenshots-all.rst
    screenshots-login.rst
