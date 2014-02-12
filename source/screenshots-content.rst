@@ -166,32 +166,59 @@ Folder listing view
        Go To  ${PLONE_URL}/new-folder/folder_listing
        Capture page screenshot  _screenshots/folder-listing-view.png
 
+Folder summary view (anonymous)
+...............................
 
 .. figure:: _screenshots/folder-anonymous-summary-view.png
-.. figure:: _screenshots/folder-anonymous-full-view.png
-.. figure:: _screenshots/folder-anonymous-tabular-view.png
-.. figure:: _screenshots/folder-anonymous-album-view.png
-.. figure:: _screenshots/folder-anonymous-listing-view.png
 .. code:: robotframework
 
-   Capture Anonymous Folder Screenshots
+   Capture Anonymous Folder Summary Screenshots
        Disable autologin
 
        Go To  ${PLONE_URL}/new-folder/folder_summary_view
        Capture page screenshot  _screenshots/folder-anonymous-summary-view.png
 
+Folder full view (anonymous)
+............................
+
+.. figure:: _screenshots/folder-anonymous-full-view.png
+.. code:: robotframework
+   Capture Anonymous Folder Full View Screenshot
+
        Go To  ${PLONE_URL}/new-folder/folder_full_view
        Capture page screenshot  _screenshots/folder-anonymous-full-view.png
+
+Folder tabular view (anonymous)
+...............................
+
+.. figure:: _screenshots/folder-anonymous-tabular-view.png
+.. code:: robotframework
+
+   Capture Anonymous Folder Tabular View Screenshot
 
        Go To  ${PLONE_URL}/new-folder/folder_tabular_view
        Capture page screenshot  _screenshots/folder-anonymous-tabular-view.png
 
+Folder album view (anonymous)
+.............................
+
+.. figure:: _screenshots/folder-anonymous-album-view.png
+.. code:: robotframework
+   Capture Anonymous Folder Album View Screenshot
+
        Go To  ${PLONE_URL}/new-folder/atct_album_view
        Capture page screenshot  _screenshots/folder-anonymous-album-view.png
 
+Folder listing view (anonymous)
+...............................
+
+.. figure:: _screenshots/folder-anonymous-listing-view.png
+.. code:: robotframework
+
+   Capture Anonymous Folder Listing Screenshot
+
        Go To  ${PLONE_URL}/new-folder/folder_listing
        Capture page screenshot  _screenshots/folder-anonymous-listing-view.png
-
 
 Search and sitemap
 ------------------
