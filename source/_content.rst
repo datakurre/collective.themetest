@@ -106,7 +106,7 @@ Folder contents
 .. figure:: _screenshots/folder-contents-view.png
 .. code:: robotframework
 
-   Capture Edit Folder Screenshot
+   Capture Folder Contents Screenshot
 
        Go To  ${PLONE_URL}/new-folder/folder_contents
        Capture page screenshot  _screenshots/folder-contents-view.png

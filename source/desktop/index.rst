@@ -16,7 +16,7 @@ Desktop (1200x)
 
    *** Test Cases ***
 
-.. include:: ../screenshots-overview.rst
-.. include:: ../screenshots-login.rst
-.. include:: ../screenshots-content.rst
-.. include:: ../screenshots-controlpanel.rst
+.. include:: ../_overview.rst
+.. include:: ../_login.rst
+.. include:: ../_content.rst
+.. include:: ../_controlpanel.rst
